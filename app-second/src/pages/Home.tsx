@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Card, Alert, Row, Col, Menu, Empty, Divider, Tag } from 'antd'
-import { AppstoreOutlined, BuildOutlined, ThunderboltOutlined } from '@ant-design/icons'
+import { Card, Alert, Grid, Menu, Empty, Divider, Tag } from '@arco-design/web-react'
+import { IconApps, IconBold, IconThunderbolt } from '@arco-design/web-react/icon'
 import { useNavigate } from 'react-router-dom'
+
+const { Row, Col } = Grid
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
@@ -35,31 +37,35 @@ const Home: React.FC = () => {
         }
       >
         <Alert
-          message="欢迎使用子应用2"
-          description="这是一个基于React 18 + TypeScript的子应用，展示React技术栈的功能和特性。"
           type="warning"
           showIcon
           style={{ marginBottom: '20px' }}
+          content={
+            <div>
+              <div style={{ fontWeight: 'bold' }}>欢迎使用子应用2</div>
+              <div style={{ marginTop: '4px' }}>这是一个基于React 18 + TypeScript的子应用，展示React技术栈的功能和特性。</div>
+            </div>
+          }
         />
 
         <Row gutter={20}>
           <Col span={8}>
             <Card hoverable style={{ textAlign: 'center', padding: '20px', marginBottom: '20px' }}>
-              <AppstoreOutlined style={{ fontSize: '40px', color: '#165dff', marginBottom: '12px' }} />
+              <IconApps style={{ fontSize: '40px', color: '#165dff', marginBottom: '12px' }} />
               <h3>组件生态</h3>
               <p style={{ color: '#86909c', margin: 0 }}>丰富的React组件库和生态系统</p>
             </Card>
           </Col>
           <Col span={8}>
             <Card hoverable style={{ textAlign: 'center', padding: '20px', marginBottom: '20px' }}>
-              <BuildOutlined style={{ fontSize: '40px', color: '#00b42a', marginBottom: '12px' }} />
+              <IconBold style={{ fontSize: '40px', color: '#00b42a', marginBottom: '12px' }} />
               <h3>状态管理</h3>
               <p style={{ color: '#86909c', margin: 0 }}>Redux、Context API等多种状态管理方案</p>
             </Card>
           </Col>
           <Col span={8}>
             <Card hoverable style={{ textAlign: 'center', padding: '20px', marginBottom: '20px' }}>
-              <ThunderboltOutlined style={{ fontSize: '40px', color: '#ff7d00', marginBottom: '12px' }} />
+              <IconThunderbolt style={{ fontSize: '40px', color: '#ff7d00', marginBottom: '12px' }} />
               <h3>虚拟DOM</h3>
               <p style={{ color: '#86909c', margin: 0 }}>高效的虚拟DOM机制，优化渲染性能</p>
             </Card>
@@ -72,12 +78,11 @@ const Home: React.FC = () => {
         <Menu
           mode="horizontal"
           selectedKeys={[activeMenu]}
-          onClick={({ key }) => handleMenuSelect(key)}
-          items={[
-            { key: 'dashboard', label: '仪表盘' },
-            { key: 'settings', label: '设置' }
-          ]}
-        />
+          onSelect={(key: any) => handleMenuSelect(key)}
+        >
+          <Menu.Item key="dashboard">仪表盘</Menu.Item>
+          <Menu.Item key="settings">设置</Menu.Item>
+        </Menu>
 
         <div style={{ marginTop: '24px', padding: '24px', background: '#f2f3f5', borderRadius: '8px' }}>
           {!activeMenu ? (

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Card, Alert, Descriptions, Button, Divider, Row, Col, Input, message } from 'antd'
-import { ArrowLeftOutlined } from '@ant-design/icons'
+import { Card, Alert, Descriptions, Button, Divider, Grid, Input } from '@arco-design/web-react'
+import { IconArrowLeft } from '@arco-design/web-react/icon'
 import { useNavigate } from 'react-router-dom'
+
+const { Row, Col } = Grid
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate()
@@ -19,26 +21,30 @@ const Dashboard: React.FC = () => {
         title={
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span>仪表盘</span>
-            <Button size="small" icon={<ArrowLeftOutlined />} onClick={goBack}>
+            <Button size="small" icon={<IconArrowLeft />} onClick={goBack}>
               返回
             </Button>
           </div>
         }
       >
         <Alert
-          message="这是仪表盘的内容"
-          description="展示React 18 + TypeScript的数据展示能力"
           type="success"
           showIcon
           style={{ marginBottom: '20px' }}
+          content={
+            <div>
+              <div style={{ fontWeight: 'bold' }}>这是仪表盘的内容</div>
+              <div style={{ marginTop: '4px' }}>展示React 18 + TypeScript的数据展示能力</div>
+            </div>
+          }
         />
 
-        <Descriptions title="页面信息" bordered column={2}>
-          <Descriptions.Item label="页面名称">仪表盘</Descriptions.Item>
-          <Descriptions.Item label="技术栈">React 18 + TypeScript</Descriptions.Item>
-          <Descriptions.Item label="状态">开发中</Descriptions.Item>
-          <Descriptions.Item label="最后更新">{updateTime}</Descriptions.Item>
-        </Descriptions>
+        <Descriptions title="页面信息" border column={2} data={[
+          { label: '页面名称', value: '仪表盘' },
+          { label: '技术栈', value: 'React 18 + TypeScript' },
+          { label: '状态', value: '开发中' },
+          { label: '最后更新', value: updateTime }
+        ]} />
 
         <Divider />
 
@@ -60,7 +66,7 @@ const Dashboard: React.FC = () => {
               <Input
                 placeholder="请输入内容"
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={(value) => setInputValue(value)}
               />
               <p style={{ marginTop: '10px', color: '#4e5969' }}>输入内容: {inputValue}</p>
             </Card>

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.0",
+    "@arco-design/web-react": "^2.66.12",
     "antd": "^6.3.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
