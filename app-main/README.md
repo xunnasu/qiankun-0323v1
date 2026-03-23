@@ -35,8 +35,8 @@ app-main/
 │   ├── utils/             # 工具函数
 │   │   └── request.js     # Axios封装
 │   ├── views/             # 页面组件
-│   │   ├── App1.vue       # 子应用1 (Vue)
-│   │   ├── App2.vue       # 子应用2 (React)
+│   │   ├── App1.vue       # 数据平台 (Vue)
+│   │   ├── App2.vue       # 仿真平台 (React)
 │   │   ├── Dashboard.vue  # 首页
 │   │   └── Login.vue      # 登录页
 │   ├── App.vue            # 根组件
@@ -54,10 +54,10 @@ app-main/
 - 路由守卫保护
 - 自动登录状态保持
 
-### 2. 子应用管理
+### 2. 子应用管理(数据平台和仿真平台)
 - 支持多子应用切换
-- 子应用1: Vue应用
-- 子应用2: React应用
+- 数据平台: Vue应用
+- 仿真平台: React应用
 - 独立的菜单配置
 - 独立的布局配置
 
@@ -136,8 +136,8 @@ npm run preview
 - `/login` - 登录页
 - `/` - 主布局（需要认证）
 - `/dashboard` - 首页
-- `/app1` - 子应用1 (Vue)
-- `/app2` - 子应用2 (React)
+- `/app1` - 数据平台 (Vue)
+- `/app2` - 仿真平台 (React)
 
 ## API接口
 
@@ -183,7 +183,3 @@ npm run preview
 - Token 存储在 localStorage 中
 - 用户信息会持久化存储
 - 应用切换状态会持久化存储
-
-## License
-
-MIT

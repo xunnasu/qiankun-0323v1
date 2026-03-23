@@ -17,7 +17,7 @@
           class="layout-menu"
           @select="handleMenuSelect"
         >
-          <!-- 子应用1的菜单 -->
+          <!-- 数据平台的菜单 -->
           <template v-if="appStore.currentAppId === 'app-first'">
             <el-menu-item index="/app-first" class="nav-item">
               <el-icon class="nav-icon"><Document /></el-icon>

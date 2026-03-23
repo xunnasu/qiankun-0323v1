@@ -3,15 +3,15 @@
     <el-card>
       <template #header>
         <div class="card-header">
-          <span>子应用1 - Vue3 + TypeScript</span>
+          <span>数据平台 - Vue3 + TypeScript</span>
           <el-tag type="success">Vue 3</el-tag>
         </div>
       </template>
       
       <el-alert
-        title="欢迎使用子应用1"
+        title="欢迎使用数据平台"
         type="info"
-        description="这是一个基于Vue 3 + TypeScript的子应用，展示Vue技术栈的功能和特性。"
+        description="这是一个基于Vue 3 + TypeScript的数据平台应用，展示Vue技术栈的功能和特性。"
         :closable="false"
         show-icon
         style="margin-bottom: 20px;"

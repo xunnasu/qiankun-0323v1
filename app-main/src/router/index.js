@@ -26,7 +26,7 @@ const routes = [
         name: 'AppFirst',
         component: () => import('@/views/AppContainer.vue'),
         meta: { 
-          title: '子应用1',
+          title: '数据平台',
           appUrl: 'http://localhost:5176'
         }
       },
@@ -35,7 +35,7 @@ const routes = [
         name: 'AppFirstChild',
         component: () => import('@/views/AppContainer.vue'),
         meta: { 
-          title: '子应用1',
+          title: '数据平台',
           appUrl: 'http://localhost:5176'
         }
       },

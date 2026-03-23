@@ -5,7 +5,7 @@ export const useAppStore = defineStore('app', () => {
   const apps = ref([
     {
       id: 'app-first',
-      name: '子应用1',
+      name: '数据平台',
       type: 'vue',
       icon: 'Document',
       description: 'Vue3 + TypeScript应用',
@@ -19,7 +19,7 @@ export const useAppStore = defineStore('app', () => {
     },
     {
       id: 'app-second',
-      name: '子应用2',
+      name: '仿真平台',
       type: 'react',
       icon: 'DocumentCopy',
       description: 'React18 + TypeScript应用',
